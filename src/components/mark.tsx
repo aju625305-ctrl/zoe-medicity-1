@@ -1,0 +1,35 @@
+export function Mark({ className = "size-11" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
+      <rect x="22" y="4" width="20" height="56" rx="8" fill="var(--color-blue)" />
+      <rect x="4" y="22" width="56" height="20" rx="8" fill="var(--color-blue)" />
+      <rect x="36" y="22" width="24" height="20" rx="6" fill="var(--color-leaf)" />
+      <path
+        d="M27 30.2c1.5-2.7 5.4-2.5 5.8.8.4-3.3 4.4-3.5 5.8-.8 1.6 2.9-.4 5.8-5.8 9.1-5.4-3.3-7.4-6.2-5.8-9.1Z"
+        fill="white"
+      />
+      <path
+        d="M46.2 28.6c1.6 1.2 2.2 2.6 2.2 4.2 0 .4-.4.8-.8.6-1.5-.6-2.6-.2-3.6.8-.3.3-.8.1-.8-.3 0-2.2 1.2-4.2 3-5.3Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+export function Wordmark({ light = false }: { light?: boolean }) {
+  return (
+    <span className="flex items-center gap-3">
+      <Mark />
+      <span className="min-w-0">
+        <span className={`block text-lg font-bold leading-none ${light ? "text-white" : "text-ink"}`}>
+          Zoe Medicity
+        </span>
+        <span
+          className={`mt-1 block text-xs font-medium tracking-wide ${light ? "text-white/80" : "text-blue"}`}
+        >
+          Care Beyond Limits
+        </span>
+      </span>
+    </span>
+  );
+}
